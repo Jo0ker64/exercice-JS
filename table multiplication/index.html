@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    Écrire une fonction javascript qui affiche la table de multiplication d’une valeur donnée en paramètre. Avant l’appel à la fonction la valeur doit être saisie par l’intermédiaire d’une fenêtre de dialogue.
+La valeur saisie doive être un nombre entier positif entre 2 et 20.
+L’affichage de résultat doit être encadré par un tableau html.
+Le tableau crée doit répondre aux critères suivants:
+
+    être au centre de la page
+    Avoir un largeur 60% de la page
+    Avec une bordure de 1px
+    Le texte de chaque cellule est mit au centre de celle-ci
+    La première cellule contient X en gras sur un fond jaune
+    Le texte de la première ligne doit avoir une police gras sur un fond gris
+    Le texte de la première colonne est en gras sur un fond gris
+
+Le schémas suivant représente le résultat souhaitait
+
+<img src="./table-multiplication-servlet.jpg" alt="">
+
+
+<script type="text/javascript">
+    var nbr;
+    var condition= false;
+    do {
+        nbr= prompt("Saisissez un nombre entier");
+            if ((isNaN(nbr) === true) || (nbr<=0) || (nbr>20)) {
+                condition=false;
+            } else {
+            condition=true;
+            }
+    } while(condition===false);
+    ///////////////////////////////
+    document.write("<center>");
+    /** Mettre un titre pour la table*/
+    document.write("<caption> Table de multiplication</caption>");
+    /* Créer la table*/
+    document.write("<table width='60%' border=1>");
+    /* Créer la première ligne */
+    document.write("<tr><td bgcolor='#FFff00'  align='center'><strong>"
+    + "x" + "</strong></td>");
+    for(var i=1;i<=nbr;i++)
+    {
+        document.write("<td bgcolor='#D1D7D6' align='center'><strong>"
+        +i+"</strong></td>");
+    }
+    document.write("</tr>");
+    /* créer les autres lignes*/
+    var t=parseInt(nbr)+1;
+    for(var i=1;i<t;i++)
+    {/* Créer la ligne numéro i*/
+        document.write("<tr>");
+        document.write("<td bgcolor='#D1D7D6'  align='center'><strong>"
+        +i+"</strong></td>");
+        for(var j=1;j<=nbr;j++)
+        {
+         /* Créer la colonne numéro j*/
+             document.write("<td align='center'>"+i*j+"</td>");
+        }
+             document.write("</tr>");
+    }
+    document.write("</table>");
+    
+    ////////////////////
+</script> 
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

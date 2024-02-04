@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fruit</title>
+</head>
+<body>
+
+
+    Soit le tableau suivant:
+
+    var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+    
+    Écrire un programme qui:
+    
+        Affiche la liste de fruits disponibles;
+        Demande au client quel fruit il désire acheter:
+            s’il est présent dans le tableau fruits: le retirer du tableau, et afficher ‘ok!’,
+            sinon, afficher ‘indisponible…’.
+        Affiche à nouveau la liste de fruits disponibles.
+    
+
+
+
+
+
+
+
+    <script>
+    var fruits = ["Mangue", "Raisin", "Figue", "Kiwi"];
+ //Affiche la liste de fruits disponibles;
+ for (var i in fruits)
+  {
+    document.write(fruits[i] + "<br>");
+  }
+//Demande au client quel fruit il désire acheter:
+  var demande_client = prompt("Quelle fruit voulez vous acheter");
+  var trouve=0;
+  var t=0;
+  for (var i in fruits)
+  {
+    if(demande_client===fruits[i])
+      {
+        fruits[t]='';
+        alert('ok');
+        trouve=1; 
+      }
+      t++;   
+  }
+  if(trouve==0){
+      document.write("</br>Indisponible</br>");
+  }
+  document.write("</br>Deuxième affichage</br>");
+  var i=0;
+  for (var i in fruits)
+    {
+      document.write(fruits[i] + "<br>");
+    }
+</script>
+</body>
+</html>

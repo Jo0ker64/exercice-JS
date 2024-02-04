@@ -1,0 +1,24 @@
+<!DOCTYPE html >
+<html lang="fr">
+<head>
+<title>Jour semaine</title>
+<meta ="UTF-8">
+</head>
+<body>
+  <script>
+    var semaine = new Array('lun', 'mra', 'mer', 'jeu', 'ven', 'Sam','ddi');
+    semaine.pop();//Retirer le dernière valeur du tableau jours
+    //Afficher les valeurs du tableau en utilisant la méthode document.write
+    for(var i in semaine)
+       {
+           document.write(semaine[i]+'</br>');
+       }
+   semaine.push("dim");//Ajouter la valeur ‘dim’ à la fin du tableau
+   semaine[1]="mar";//Remplacer la valeur ‘mra’ par ‘mar’
+   //Afficher le nombre de valeurs du tableau en utilisant la méthode document.write 
+   document.write( "La taille du tableau est" + semaine.length );
+   //Afficher la troisième valeur du tableau
+   document.write( "La troisième élément du tableau est" + semaine[2] );
+   </script>
+</body>
+</html>
